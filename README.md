@@ -69,7 +69,7 @@ php bin/console doctrine:migrations:migrate
    - Описание: Создает новый квест на основе переданных данных.
 
 # CompleteQuest
-- Квест, следующие поля: id, user_id(id пользователя), quest_id(id квеста), completed_at(дата выполнения) 
+- Выполненный квест, следующие поля: id, user_id(id пользователя), quest_id(id квеста), completed_at(дата выполнения) 
 1. Получение списка всех квестов:
    - Метод: GET
    - URL: /quests
