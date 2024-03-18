@@ -1,0 +1,36 @@
+{# templates/user/user_profile.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+{% endblock %}
+
+{% block title %}User Profile{% endblock %}
+
+{% block content %}
+    <h1 class="profile-header">User Profile</h1>
+    <p class="profile-info"><strong>Name:</strong> {{ user.name }}</p>
+    <p class="profile-info"><strong>Balance:</strong> {{ user.balance }}</p>
+    <h2>Completed Quests</h2>
+    <ul>
+        {% for quest in user.quests %}
+            <li class="quest completed" style="background-color: lightgreen;">
+                <p>{{ quest.name }}</p>
+                <p>{{ quest.price }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+    <h2>Available Quests</h2>
+    <ul>
+        {% for quest in availableQuests %}
+            <li class="quest {% if quest in user.quests %}completed{% else %}pending{% endif %}">
+                <p>{{ quest.name }}</p>
+                <p>Reward: {{ quest.price }}</p>
+                <form action="{{ path('app_mark_quest_completed', {'userId': user.id, 'questId': quest.id}) }}" method="post" style="display: inline;">
+                    <button type="submit">Отметить как выполненное</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

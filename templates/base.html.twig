@@ -1,0 +1,31 @@
+{# templates/base.html.twig #}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome{% endblock %}</title>
+    <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
+    {% block stylesheets %}{% endblock %}
+</head>
+<header>
+    <h1>Simple tasks</h1>
+    <nav>
+        <ul>
+            <li><a href="{{ path('app_users') }}">Пользователи</a></li>
+            <li><a href="{{ path('app_quests') }}">Задания</a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+<div class="content">
+    {% block content %}{% endblock %}
+</div>
+
+<footer>
+    <p>Ilya Emelyanov</p>
+    <p>&copy; 2024 Все права защищены.</p>
+</footer>
+
+{% block javascripts %}{% endblock %}
+</body>
+</html>

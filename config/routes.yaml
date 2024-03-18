@@ -1,0 +1,8 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+app_mark_quest_completed:
+    path: /user/{userId}/quest/{questId}/complete
+    controller: App\Controller\UserController::markQuestCompleted
