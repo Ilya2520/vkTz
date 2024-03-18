@@ -25,6 +25,7 @@ php bin/console doctrine:migrations:migrate
 - /users/{$id} - возможность переключения между пользоватилями, возможно выполнять задания по нажатию кнопки
 
 # User:
+- Пользователь, следующие поля: id, name, balance
 1. Создание пользователя:
    - Метод: POST
    - URL: /api/user/create
@@ -55,6 +56,7 @@ php bin/console doctrine:migrations:migrate
    - Описание: Возвращает список всех выполненных квестов для указанного пользователя в формате JSON.
 
 # Quest:
+- Квест, следующие поля: id, name, price(награда за выполнение)
 1. Просмотр списка квестов:
    - Метод: GET
    - URL: /quest
@@ -67,6 +69,7 @@ php bin/console doctrine:migrations:migrate
    - Описание: Создает новый квест на основе переданных данных.
 
 # CompleteQuest
+- Квест, следующие поля: id, user_id(id пользователя), quest_id(id квеста), completed_at(дата выполнения) 
 1. Получение списка всех квестов:
    - Метод: GET
    - URL: /quests
