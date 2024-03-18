@@ -10,9 +10,13 @@ make build
 make up
 ```
 После запуска контейнеров зайти в контейнер php командой
-```make php```
+```
+make php
+```
 Установить миграции в бд
-```  php bin/console doctrine:migrations:migrate ```
+```  
+php bin/console doctrine:migrations:migrate
+```
 Проект готов к тестированию
 
 # Описание
